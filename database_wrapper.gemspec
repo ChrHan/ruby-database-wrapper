@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["christoper.hans@bukalapak.com"]
 
   spec.summary       = "Database CRUD Wrapper for SQLite3"
-  spec.homepage      = "https://www.bukalapak.com"
+  spec.homepage      = "https://github.com/ChrHan/ruby-database-wrapper"
   spec.license       = 'MIT'
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
