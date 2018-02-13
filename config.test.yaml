@@ -1,0 +1,2 @@
+database:
+  filename: 'test-database.db'
