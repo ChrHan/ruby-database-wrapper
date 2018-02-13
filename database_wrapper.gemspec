@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Database CRUD Wrapper for SQLite3"
   spec.homepage      = "https://www.bukalapak.com"
-
+  spec.license       = 'MIT'
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
@@ -32,6 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
 
-  spec.add_runtime_dependency "sqlite3", "~> 1.3.13"
+  spec.add_runtime_dependency "sqlite3", "~> 1.3"
 
 end

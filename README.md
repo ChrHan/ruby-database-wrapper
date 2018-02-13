@@ -1,8 +1,10 @@
 # DatabaseWrapper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/database_wrapper`. To experiment with that code, run `bin/console` for an interactive prompt.
+A gem for BukaLapak's SRE Onboarding Project.
 
-TODO: Delete this and the text above, and describe your gem
+This gem wraps CRUD operation to Ruby native code.
+
+Tables supported for this gem is described below.
 
 ## Installation
 
@@ -20,6 +22,8 @@ Or install it yourself as:
 
     $ gem install database_wrapper
 
+An `SQLite3` Database needs to be created, named as `database.db` 
+
 ## Usage
 
 ### DB Setup
@@ -28,6 +32,27 @@ Or install it yourself as:
       id  INT PRIMARY KEY,
       product_name VARCHAR(20)
     );
+
+### Building Gem
+
+    gem build database_wrapper.gemspec
+
+### Using Gem
+
+    gem install database_wrapper-0.1.0.gem
+
+    irb
+    > require 'database_wrapper'
+    > DatabaseWrapper.select
+
+functions of DatabaseWrapper is listed below
+
+### Functions available
+
+`DatabaseWrapper.select` -> select * from products
+`DatabaseWrapper.insert(id, product_name)` -> insert into products values ('id', 'product_name')
+`DatabaseWrapper.delete(id)` -> delete from products where id = 'id'
+`DatabaseWrapper.update(id, product_name)` -> update products set product_name = 'product_name' where id = 'id'
 
 ## Development
 
