@@ -12,9 +12,7 @@ class DatabaseHelper
   end
 
   def select
-    @db.execute("select * from products") do |row|
-      p row
-    end
+    @db.execute("select * from products")
   end
 
   def insert(id, product_name)
