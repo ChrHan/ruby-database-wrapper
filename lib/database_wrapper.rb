@@ -3,8 +3,8 @@ require "database_helper"
 require "database_wrapper/version"
 
 class DatabaseWrapper
-  def initialize
-    config = ConfigLoader.new('config.yaml')
+  def initialize(config_file='config.yaml')
+    config = ConfigLoader.new(config_file)
     @db = DatabaseHelper.new(config.filename)
   end
 

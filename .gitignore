@@ -14,7 +14,7 @@
 *.db
 
 # config
-config.yaml
+*.yaml
 
 # vim swap file
 *.swp

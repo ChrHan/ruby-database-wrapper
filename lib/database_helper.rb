@@ -6,29 +6,52 @@ class DatabaseHelper
   end
 
   def selectcount
-    @db.get_first_value("select count(1) from products") do |row|
-      p row
+    begin
+      @db.get_first_value("select count(1) from products") 
+    rescue SQLite3::Exception
+          $stderr.print "Table Products not found. Please read README.md for guide to create one.\n"
     end
   end
 
   def select
-    @db.execute("select * from products")
+    begin
+      @db.execute("select * from products")
+    rescue SQLite3::Exception
+      $stderr.print "Table Products not found. Please read README.md for guide to create one.\n"
+    end
   end
 
   def insert(id, product_name)
-    @db.execute("insert into products values (?, ?)", [id, product_name])
+    begin
+      @db.execute("insert into products values (?, ?)", [id, product_name])
+    rescue SQLite3::Exception
+      $stderr.print "Table Products not found. Please read README.md for guide to create one.\n"
+    end
   end
 
   def update(id, product_name)
-    @db.execute("update products set product_name = ? where id = ?", [product_name, id])
+    begin
+      @db.execute("update products set product_name = ? where id = ?", [product_name, id])
+    rescue SQLite3::Exception
+      $stderr.print "Table Products not found. Please read README.md for guide to create one.\n"
+    end
   end
 
   def delete(id)
-    @db.execute("delete from products where id = ?", [id])
+    begin
+      @db.execute("delete from products where id = ?", [id])
+    rescue SQLite3::Exception
+      $stderr.print "Table Products not found. Please read README.md for guide to create one.\n"
+    end
   end
 
   def execute(query)
-    @db.execute(query)
+    begin
+      @db.execute(query)
+    rescue SQLite3::Exception
+          $stderr.print "Syntax Error. Please check your SQL Syntax: \n #{query} \n"
+    end
+
   end
 
 end
