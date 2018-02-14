@@ -27,4 +27,9 @@ class DatabaseWrapper
   def execute(query)
     @db.execute(query)
   end
+
+  def selectcount
+    @db.selectcount
+  end
+
 end
