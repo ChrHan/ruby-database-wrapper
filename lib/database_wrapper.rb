@@ -1,35 +1,30 @@
+require "config_loader"
 require "database_helper"
 require "database_wrapper/version"
-require "yaml"
 
 class DatabaseWrapper
-  def self.select
-    @config = YAML::load_file('config.yaml')
-    db = DatabaseHelper.new(@config['database']['filename'])
-    db.select
+  def initialize
+    config = ConfigLoader.new('config.yaml')
+    @db = DatabaseHelper.new(config.filename)
   end
 
-  def self.insert(id, product_name)
-    @config = YAML::load_file('config.yaml')
-    db = DatabaseHelper.new(@config['database']['filename'])
-    db.insert(id, product_name)
+  def select
+    @db.select
   end
 
-  def self.update(id, product_name)
-    @config = YAML::load_file('config.yaml')
-    db = DatabaseHelper.new(@config['database']['filename'])
-    db.update(id, product_name)
+  def insert(id, product_name)
+    @db.insert(id, product_name)
   end
 
-  def self.delete(id)
-    @config = YAML::load_file('config.yaml')
-    db = DatabaseHelper.new(@config['database']['filename'])
-    db.delete(id)
+  def update(id, product_name)
+    @db.update(id, product_name)
+  end
+
+  def delete(id)
+    @db.delete(id)
   end
 
   def self.execute(query)
-    @config = YAML::load_file('config.yaml')
-    db = DatabaseHelper.new(@config['database']['filename'])
-    db.execute(query)
+    @db.execute(query)
   end
 end
