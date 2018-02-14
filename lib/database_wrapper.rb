@@ -24,7 +24,7 @@ class DatabaseWrapper
     @db.delete(id)
   end
 
-  def self.execute(query)
+  def execute(query)
     @db.execute(query)
   end
 end
