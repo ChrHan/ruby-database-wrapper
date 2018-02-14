@@ -1,10 +1,10 @@
-require "databasehelper"
+require "database_helper"
 require "yaml"
 
 RSpec.describe DatabaseWrapper do
   before :all do
-		db = DatabaseHelper.new(YAML::load_file('config.test.yaml'))
-		db.execute("CREATE TABLE PRODUCTS (
+    db = DatabaseHelper.new(YAML::load_file('config.test.yaml'))
+    db.execute("CREATE TABLE PRODUCTS (
       id  INT PRIMARY KEY,
       product_name VARCHAR(20)
     );")
@@ -20,15 +20,15 @@ RSpec.describe DatabaseWrapper do
   context "when a product is created" do
     it "returns product when selected" do
       db = DatabaseHelper.new(YAML::load_file('config.test.yaml'))
-      db.insert(9999,"123123")
+      db.insert(9999, "123123")
       expect(db.selectcount).not_to be 0
       expect(db.select).not_to be nil
     end
   end
 
   after :all do
-		db = DatabaseHelper.new(YAML::load_file('config.test.yaml'))
-		db.execute("drop table products")
+    db = DatabaseHelper.new(YAML::load_file('config.test.yaml'))
+    db.execute("drop table products")
   end
 end
 
