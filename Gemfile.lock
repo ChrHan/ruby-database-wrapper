@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    database_wrapper (0.1.0)
-      sqlite3 (~> 1.3.13)
+    database_wrapper (0.1.3)
+      sqlite3 (~> 1.3)
 
 GEM
   remote: https://rubygems.org/

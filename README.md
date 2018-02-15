@@ -39,19 +39,22 @@ An `SQLite3` Database needs to be created, named as `database.db`
 
 ### Using Gem
 
-    gem install database_wrapper-0.1.0.gem
+    gem install database_wrapper-0.1.4.gem
 
     irb
     > require 'database_wrapper'
-    > DatabaseWrapper.select
+    > db = DatabaseWrapper.new
+    > db.select
 
 functions of DatabaseWrapper is listed below
 
 ### Functions available
 
-`DatabaseWrapper.select` -> select * from products
-`DatabaseWrapper.insert(id, product_name)` -> insert into products values ('id', 'product_name')
 `DatabaseWrapper.delete(id)` -> delete from products where id = 'id'
+`DatabaseWrapper.execute(query)` -> execute query string stored in variable `query` 
+`DatabaseWrapper.insert(id, product_name)` -> insert into products values ('id', 'product_name')
+`DatabaseWrapper.select` -> select * from products
+`DatabaseWrapper.selectcount` -> select count(1) from products
 `DatabaseWrapper.update(id, product_name)` -> update products set product_name = 'product_name' where id = 'id'
 
 ## Development
@@ -59,6 +62,10 @@ functions of DatabaseWrapper is listed below
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## Test
+
+Run test with `rspec` command
 
 ## Contributing
 
