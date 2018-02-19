@@ -16,7 +16,7 @@ gem 'database_wrapper'
 
 And then execute:
 
-    $ bundle
+    $ bundle install --path ./
 
 Or install it yourself as:
 
@@ -65,7 +65,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Test
 
-Run test with `rspec` command
+Run test with `bundler exec rspec` command
 
 ## Contributing
 
