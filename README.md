@@ -1,6 +1,6 @@
 # DatabaseWrapper
 
-A gem for BukaLapak's SRE Onboarding Project.
+A gem for BukaLapak's SRE Onboarding Project. - 
 
 This gem wraps CRUD operation to Ruby native code.
 
